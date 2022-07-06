@@ -45,8 +45,9 @@
                             <i @click="removeToDo(index)" class="fa-solid fa-xmark"></i>
                         </li>
                     </ul>
-                    
-                    <input type="text" v-model.trim="newToDo" @keyUp.enter="addToList(newToDo)">
+
+                    <input type="text" v-model.trim="newToDo" @keyUp.enter="addToList">
+                    <button class="btn btn-danger" @click="addToList">aggiungi</button>
                 </div>
             </div>
         </div>

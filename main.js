@@ -40,20 +40,18 @@ const app = new Vue({
     removeToDo(index) {
       this.todos.splice(index, 1);
     },
-  },
-  
-  addToList: function (element) {
-    if (element === "") {
-      console.log("stai provando a inserire un elemento vuoto");
-    } else {
-      const newToDo = {
-        text: this.newToDo.push(element),
-        done: false,
-      };
-
-      this.todos.push(newToDo);
-
+    addToList: function () {
+      this.todos.push({ text: this.newToDo, done: false });
+      // if (element === "") {
+      //   console.log("stai provando a inserire un elemento vuoto");
+      // } else {
+      //   const addToDo = {
+      //     text: this.newToDo.push(element),
+      //     done: false,
+      //   };
       this.newToDo = "";
-    }
+    },
   },
+
+  
 });
