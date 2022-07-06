@@ -21,25 +21,39 @@ const app = new Vue({
   data: {
     todos: [
       {
-        text: 'Fare i compiti',
-        done: false
+        text: "Fare i compiti",
+        done: false,
       },
       {
-        text: 'Fare la spesa',
-        done: true
+        text: "Fare la spesa",
+        done: true,
       },
       {
-        text: 'Fare il bucato',
-        done: false
-      }
+        text: "Fare il bucato",
+        done: false,
+      },
     ],
-
+    newToDo: "",
   },
 
   methods: {
-
-    removeToDo(index){
-      this.todos.splice(index,1)},
-    
+    removeToDo(index) {
+      this.todos.splice(index, 1);
+    },
   },
-}); 
+  
+  addToList: function (element) {
+    if (element === "") {
+      console.log("stai provando a inserire un elemento vuoto");
+    } else {
+      const newToDo = {
+        text: this.newToDo.push(element),
+        done: false,
+      };
+
+      this.todos.push(newToDo);
+
+      this.newToDo = "";
+    }
+  },
+});
