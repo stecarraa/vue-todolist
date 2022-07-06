@@ -29,7 +29,19 @@ const app = new Vue({
         done: true,
       },
       {
-        text: "Fare il bucato",
+        text: "Pulire casa",
+        done: false,
+      },
+      {
+        text: "Lavare la macchina",
+        done: false,
+      },
+      {
+        text: "Fare benzina",
+        done: true,
+      },
+      {
+        text: "Bere tanta acqua",
         done: false,
       },
     ],
@@ -54,8 +66,9 @@ const app = new Vue({
       this.newToDo = "";
     },
 
-    line (index){
+    line: function (index){
       this.todos[index].done=!this.todos[index].done;
+      console.log(index)
   }
   },
 

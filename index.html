@@ -37,7 +37,7 @@
             <div class="row justify-content-center">
                 <div class="col-12 text-center">
                     <ul class="list-group">
-                        <li v-for="toDo in todos"
+                        <li v-for="(toDo,index) in todos"
                             class="d-flex justify-content-between list-group-item bg-light w-100 border-3 border-danger"
                             :class="toDo.done? 'text-decoration-line-through' : '' " @click="line(index)">
                             {{ toDo.text }}
@@ -46,8 +46,8 @@
                         </li>
                     </ul>
 
-                    <input type="text" v-model.trim="newToDo" @keyUp.enter="addToList">
-                    <button class="btn btn-danger" @click="addToList">aggiungi</button>
+                    <input class="mt-2" type="text" v-model.trim="newToDo" @keyUp.enter="addToList">
+                    <button class="btn btn-danger mt-2" @click="addToList">aggiungi</button>
                 </div>
             </div>
         </div>
