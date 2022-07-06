@@ -37,6 +37,9 @@ const app = new Vue({
   },
 
   methods: {
+
+    removeToDo(index){
+      this.todos.splice(index,1)},
     
   },
 }); 
