@@ -33,6 +33,7 @@ const app = new Vue({
         done: false,
       },
     ],
+    done:true,
     newToDo: "",
   },
 
@@ -40,6 +41,7 @@ const app = new Vue({
     removeToDo(index) {
       this.todos.splice(index, 1);
     },
+
     addToList: function () {
       this.todos.push({ text: this.newToDo, done: false });
       // if (element === "") {
@@ -51,6 +53,10 @@ const app = new Vue({
       //   };
       this.newToDo = "";
     },
+
+    line (index){
+      this.todos[index].done=!this.todos[index].done;
+  }
   },
 
   

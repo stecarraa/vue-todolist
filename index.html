@@ -39,7 +39,7 @@
                     <ul class="list-group">
                         <li v-for="toDo in todos"
                             class="d-flex justify-content-between list-group-item bg-light w-100 border-3 border-danger"
-                            :class="toDo.done? 'text-decoration-line-through' : '' ">
+                            :class="toDo.done? 'text-decoration-line-through' : '' " @click="line(index)">
                             {{ toDo.text }}
 
                             <i @click="removeToDo(index)" class="fa-solid fa-xmark"></i>
